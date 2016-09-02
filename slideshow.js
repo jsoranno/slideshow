@@ -7,7 +7,7 @@ var count = 0;
 //Use jQuery to run "startSlideshow" when you click the "start" button
 $("#start").on('click', startSlideshow);
 //Use jQuery to run "stopSlideshow" when you click the "stop" button
-$(".stop").on('click', stopSlideshow);
+$("#stop").on('click', stopSlideshow);
 
 
 
@@ -33,14 +33,13 @@ function nextImage (){
 }
 function startSlideshow (){
     //use a setInterval to run nextImage
-    setInterval(nextImage, 3000);
+    showImage = setInterval(nextImage, 3000);
 
 }
 function stopSlideshow () {
     //put your clearInterval here:
-    clearInterval(count == images.length);
-
-
+    clearInterval(showImage);
+    clearTimeout(showImage);
 }
 
 
